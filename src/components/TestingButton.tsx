@@ -5,7 +5,7 @@ interface Props {
 function TestingButton({ onClick }: Props) {
   return (
     <div>
-      <button onClick={onClick}>TestingButton</button>
+      <button onClick={onClick}>Press to Test</button>
     </div>
   );
 }
