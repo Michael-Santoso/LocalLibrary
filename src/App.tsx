@@ -4,6 +4,7 @@ import TestingButton from "./components/TestingButton";
 import ErrorAPI from "./components/ErrorAPI";
 import ListDown from "./components/ListDown";
 import axios from "axios";
+import "./components/ListDown.css";
 
 function App() {
   const [flagAPISucceed, setFlagAPISucceed] = useState(false);
@@ -16,12 +17,13 @@ function App() {
       )
       .then((resp) => {
         setCountryCode(resp.data.country.country_code);
+        setFlagAPISucceed(true);
         console.log("API Called");
       });
   };
 
   return (
-    <div style={{ width: "1920px", height: "1080px" }}>
+    <div className="overall">
       <GetCountryButton
         onClick={testingOnClick}
         countryCode={countryCode}

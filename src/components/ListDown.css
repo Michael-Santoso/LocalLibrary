@@ -1,3 +1,10 @@
+.overall{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .wrapper{
     display: flex;
     height: 100vh;
@@ -54,7 +61,7 @@
     align-items: center;
     
 
-    margin-bottom: -50px;
+    margin-bottom: -45px;
 }
 
 .title-main h2 {
@@ -62,7 +69,11 @@
     margin-right: 25px; 
     font-weight: 600;
 }
-  
+
+.title-main h2:first-child {
+    margin-left: 5px;
+}
+
 .title-main h2:last-child {
     margin-right: 5px;
     color:#d77777;
@@ -71,7 +82,9 @@
 
 .subscript{
     margin-left: auto;
+    text-align: right;
     font-weight: normal;
+    width: 100px;
 }
 
 .names{
@@ -83,7 +96,7 @@
     margin-bottom: 10px;
     border-radius: 10px;
     padding: 10px 40px;
-    width:fit-content;
+    width:170px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
 
     display: flex;

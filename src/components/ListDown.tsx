@@ -20,14 +20,14 @@ function ListDown() {
               <div className="title-content">
                 <div className="title-main">
                   <h2>{i + 1}</h2>
-                  <h2>{item.question}</h2>
+                  <h2>{item.name}</h2>
                   <h2>&#x2303;</h2>
                 </div>
-                <h6 className="subscript">{"by Author" + (i + 1)}</h6>
+                <h6 className="subscript">{"by " + item.author}</h6>
               </div>
             </div>
             <div className={selected == i ? "content.show" : "content"}>
-              {item.answer.map((name, subi) => (
+              {item.borrower.map((name, subi) => (
                 <div key={subi} className="names">
                   {name}
                 </div>
@@ -42,24 +42,27 @@ function ListDown() {
 
 const data = [
   {
-    question: "Book Name 1",
-    answer: [
+    name: "Book Name 1",
+    author: "Very very long author name",
+    borrower: [
+      "Very very very long name of book borrower",
+      "Short",
+      "Medium Name",
+    ],
+  },
+  {
+    name: "Book Name 2",
+    author: "Author",
+    borrower: [
       "First_Name Last_Name",
       "First_Name Last_Name",
       "First_Name Last_Name",
     ],
   },
   {
-    question: "Book Name 2",
-    answer: [
-      "First_Name Last_Name",
-      "First_Name Last_Name",
-      "First_Name Last_Name",
-    ],
-  },
-  {
-    question: "Book Name 3",
-    answer: [
+    name: "Book Name 3",
+    author: "Medium author",
+    borrower: [
       "First_Name Last_Name",
       "First_Name Last_Name",
       "First_Name Last_Name",
