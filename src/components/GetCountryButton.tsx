@@ -1,8 +1,15 @@
+import { useEffect } from "react";
+
 interface Props {
   onClick: () => void;
+  countryCode?: String;
 }
 
-function GetCountryButton({ onClick }: Props) {
+function GetCountryButton({ onClick, countryCode }: Props) {
+  useEffect(() => {
+    console.log("Country code changed:", countryCode);
+  }, [countryCode]);
+
   return (
     <div>
       <button
@@ -21,7 +28,7 @@ function GetCountryButton({ onClick }: Props) {
           marginLeft: "20px",
         }}
       >
-        Get Country: SG
+        Get Country: {countryCode}
       </button>
     </div>
   );
