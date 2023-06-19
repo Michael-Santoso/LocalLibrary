@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import GetCountryButton from "./components/GetCountryButton";
 import TestingButton from "./components/TestingButton";
 import ErrorAPI from "./components/ErrorAPI";
@@ -9,6 +9,7 @@ import "./components/ListDown.css";
 function App() {
   const [flagAPISucceed, setFlagAPISucceed] = useState(false);
   const [countryCode, setCountryCode] = useState();
+  const [bookList, setBookList] = useState<String[]>([]);
 
   const testingOnClick = () => {
     axios
@@ -19,6 +20,15 @@ function App() {
         setCountryCode(resp.data.country.country_code);
         setFlagAPISucceed(true);
         console.log("API Called");
+      });
+
+    axios
+      .get(
+        "https://d74b9ce7-edda-4eee-8600-66fab16e0ea4.mock.pstmn.io/getTop3ReadBook?countryCode=SG"
+      )
+      .then((resp2) => {
+        setBookList(resp2.data);
+        console.log("API2 Called");
       });
   };
 
