@@ -19,9 +19,9 @@ function ListDown() {
             <div className="title" onClick={() => toggle(i)}>
               <div className="title-content">
                 <div className="title-main">
-                  <h2>{i + 1}</h2>
-                  <h2>{item.name}</h2>
-                  <h2>&#x2303;</h2>
+                  <div className="item-number">{i + 1}</div>
+                  <div className="item-name">{item.name}</div>
+                  <div className="item-dropdown">&#x2303;</div>
                 </div>
                 <h6 className="subscript">{"by " + item.author}</h6>
               </div>
@@ -51,7 +51,7 @@ const data = [
     ],
   },
   {
-    name: "Book Name 2",
+    name: "Very very very long book name",
     author: "Author",
     borrower: [
       "First_Name Last_Name",
@@ -60,7 +60,7 @@ const data = [
     ],
   },
   {
-    name: "Book Name 3",
+    name: "ShortBook",
     author: "Medium author",
     borrower: [
       "First_Name Last_Name",
