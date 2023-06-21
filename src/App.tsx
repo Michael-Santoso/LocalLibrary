@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import GetCountryButton from "./components/GetCountryButton";
-import TestingButton from "./components/TestingButton";
 import ErrorAPI from "./components/ErrorAPI";
 import ListDown from "./components/ListDown";
 import axios from "axios";
