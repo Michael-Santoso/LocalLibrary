@@ -1,7 +1,13 @@
 import { useState } from "react";
+import { Book } from "../App.tsx";
 import "./ListDown.css";
+import ErrorAPI from "./ErrorAPI.tsx";
 
-function ListDown() {
+interface Props {
+  bookList: Book[];
+}
+
+function ListDown({ bookList }: Props) {
   const [selected, setSelected] = useState<any>(null);
 
   const toggle = (i: number) => {
@@ -11,11 +17,15 @@ function ListDown() {
     setSelected(i);
   };
 
+  if (bookList.length === 0) {
+    return <ErrorAPI></ErrorAPI>;
+  }
+
   return (
     <div className="wrapper">
       <div className="accordion">
-        {data.map((item, i) => (
-          <div className="item">
+        {bookList.map((item, i) => (
+          <div className="item" key={i}>
             <div className="title" onClick={() => toggle(i)}>
               <div className="title-content">
                 <div className="title-main">
@@ -40,6 +50,7 @@ function ListDown() {
   );
 }
 
+/*
 const data = [
   {
     name: "Book Name 1",
@@ -69,5 +80,6 @@ const data = [
     ],
   },
 ];
+*/
 
 export default ListDown;
